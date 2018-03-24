@@ -1,0 +1,23 @@
+<div class="col-md-10">
+
+  <h1>Secret Santa</h1>
+
+  <ul class="phones">
+    <li ng-repeat="person in $ctrl.people" class="thumbnail phone-list-item">
+      <a href="#!/person/{{person._id}}">{{person.name}}</a>
+      <p>{{person.email}}</p>
+      <div>
+        <a class="btn btn-primary" ng-click="deleteUser({id:person._id})">Remove User</a>
+      </div>
+    </li>
+  </ul>
+
+  <div>
+    <a class="btn btn-primary" href="#!/person/new-user">Insert User</a>
+  </div>
+  </br>
+  <div>
+    <a class="btn btn-primary" ng-click="sendMails()">Send Emails</a>
+  </div>
+
+</div>
