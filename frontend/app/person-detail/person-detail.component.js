@@ -21,7 +21,6 @@ angular.
               $window.location.href = ''; //redirect to home
             });
           } else {
-            console.log('going to insert', $scope.person);
             Person.insertResource.save({ name: $scope.person.name, email: $scope.person.email }, function() {
               $window.location.href = ''; //redirect to home
             });

@@ -4,7 +4,7 @@ angular.
   module('core.people').
   factory('People', ['$resource',
     function($resource) {
-      var resourceList = $resource('https://secret-santa-nb.herokuapp.com/person/list', {}, {
+      var resourceList = $resource('http://localhost:3000/person/list', {}, {
         query: {
           method: 'GET',
           isArray: true
@@ -12,28 +12,28 @@ angular.
       });
 
       var resourceItem = function(params) {
-        return $resource('https://secret-santa-nb.herokuapp.com/person/list/' + params._id);
+        return $resource('http://localhost:3000/person/list/' + params._id);
       }
 
-      var updateResource = $resource('https://secret-santa-nb.herokuapp.com/person/update/:id', {}, {
+      var updateResource = $resource('http://localhost:3000/person/update/:id', {}, {
         update: {
           method: "PUT",
         }
       });
 
-      var deleteResource = $resource('https://secret-santa-nb.herokuapp.com/person/delete/:id', {}, {
+      var deleteResource = $resource('http://localhost:3000/person/delete/:id', {}, {
         update: {
           method: "DELETE",
         }
       });
 
-      var insertResource = $resource('https://secret-santa-nb.herokuapp.com/person/create', {}, {
+      var insertResource = $resource('http://localhost:3000/person/create', {}, {
         save: {
           method: "POST",
         }
       });
 
-      var sendResource = $resource('https://secret-santa-nb.herokuapp.com/people/send-emails', {}, {
+      var sendResource = $resource('http://localhost:3000/people/send-emails', {}, {
         save: {
           method: "POST",
         }
